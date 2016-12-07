@@ -11,10 +11,8 @@ namespace csharpTowerDefense
         static void Main(string[] args)
         {
             Tower tower = new Tower();
-            Map map = new Map();
-            map.Width = 8;
-            map.Height = 5;
-
+            Map map = new Map(8, 5);
+           
             int area = map.Width * map.Height;
             Console.WriteLine(area);
         }
