@@ -10,11 +10,15 @@ namespace csharpTowerDefense
     {
         static void Main(string[] args)
         {
-            Tower tower = new Tower();
-            Map map = new Map(8, 5);
            
+            Map map = new Map(8, 5);
+            Point point = new Point(4, 2);
+            Console.WriteLine(point.DistanceTo(5, 5));
+
+            bool isOnMap = map.OnMap(point);
             int area = map.Width * map.Height;
             Console.WriteLine(area);
+            Console.WriteLine(isOnMap);
         }
     }
 }
