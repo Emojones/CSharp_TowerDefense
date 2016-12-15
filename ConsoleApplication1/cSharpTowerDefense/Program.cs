@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using cSharpTowerDefense;
 
-namespace csharpTowerDefense
+namespace cSharpTowerDefense
 {
     class Game
     {
@@ -18,9 +17,18 @@ namespace csharpTowerDefense
             {
                 MapLocation maplocation = new MapLocation(20, 20, map);
             }
-            catch (Exception ex)
+            catch (OutOfBoundsException ex)
             {
                 Console.WriteLine(ex.Message);
+
+            }
+            catch (DefenseException)
+            {
+                Console.WriteLine("Unhandled DefenseExceptions");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Unhandled Exception");
             }
             
         }

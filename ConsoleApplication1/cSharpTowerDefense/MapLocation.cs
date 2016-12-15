@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using csharpTowerDefense;
+
 namespace cSharpTowerDefense
 {
     class MapLocation : Point
@@ -12,7 +12,7 @@ namespace cSharpTowerDefense
         {
             if (!map.OnMap(this))
             {
-                throw new System.Exception(x + "," + y + " is outside the scope of the map");
+                throw new OutOfBoundsException(x + "," + y + " is outside the scope of the map");
             }
         }
     }
