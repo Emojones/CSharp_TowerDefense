@@ -8,6 +8,6 @@ namespace cSharpTowerDefense
 {
     class Invader
     {
-
+      public MapLocation Location {get; private set;}
     }
 }
