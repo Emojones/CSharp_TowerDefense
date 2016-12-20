@@ -15,5 +15,10 @@ namespace cSharpTowerDefense
                 throw new OutOfBoundsException(x + "," + y + " is outside the scope of the map");
             }
         }
+
+        public bool InRangeOf(MapLocation location, int range)
+        {
+            return DistanceTo(location) <= range;
+        }
     }
 }
