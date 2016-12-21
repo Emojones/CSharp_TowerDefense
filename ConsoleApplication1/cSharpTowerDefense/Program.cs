@@ -28,11 +28,30 @@ namespace cSharpTowerDefense
                     new MapLocation(7,2, map)
                 });
 
-                MapLocation location = path.GetLocationAt(9);
-                if (location != null)
+                Invader[] invaders =
+                    {
+                        new Invader(path),
+                        new Invader(path),
+                        new Invader(path),
+                        new Invader(path),
+                     };
+
+                Tower[] towers =
+                    {
+                        new Tower (new MapLocation(1,3,map)),
+                        new Tower (new MapLocation(3,3,map)),
+                        new Tower (new MapLocation(4,4,map))
+                };
+
+                Level level = new Level(invaders)
                 {
-                    Console.WriteLine(location.X + ", " + location.Y);
-                }
+                    Towers = towers
+                };
+
+                bool playerWon = level.Play();
+
+                Console.WriteLine("Player " + (playerWon ? "won" : "lost"));           
+            
             }
             catch (OutOfBoundsException ex)
             {
